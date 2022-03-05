@@ -1,0 +1,2 @@
+#!/bin/bash
+-d 751 my_dir
