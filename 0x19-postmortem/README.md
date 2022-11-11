@@ -10,3 +10,12 @@
  # 12:00 AM - Server error occurs and outage is detected
  # 12:02 AM - On-call devOps team checks the error logs
  # 12:03 AM - Updates error configuration
+
+<h2>Root cause and resolution</h2>
+
+<p> Two Ubuntu cloud servers power the BooktifuL platform. The master server web-01 was connected to serve all requests, and it stopped working due to a memory outage caused by so many requests since the client server web-02 was unplugged momentarily for testing and was not connected to the load balancer afterward during a prior test.</p>
+
+<p> The problem was resolved by temporarily disconnecting the master server for memory cleaning, then reconnecting it to the load balancer, and configuring the round-robin algorithm so that both the master and client servers could handle an equal number of requests. </p>
+
+<h2>Measures against such problem in future</h2>
+
